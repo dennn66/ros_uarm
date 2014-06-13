@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="frobo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- The following included files set up definitions of parts of the robot body -->
+  <xacro:include filename="$(find frobo_description)/urdf/base.urdf.xacro" />
+<xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:include filename="$(find frobo_description)/urdf/uarm.urdf.xacro" />
+
+<!--
+  <xacro:include filename="$(find frobo_description)/urdf/kinect_camera.urdf.xacro" />
+  <xacro:include filename="$(find frobo_description)/urdf/lidar.urdf.xacro" />
+-->
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find frobo_description)/urdf/frobo.gazebo" />
+  <!-- Import Rviz colors -->
+  <xacro:include filename="$(find frobo_description)/urdf/materials.urdf.xacro" />
+
+  <!-- Now we can start using the macros included above to define the actual Frobo -->
+  <frobo_base color1="Black" color2="Brown"/>
+
+  <!-- uarm -->
+
+  <uarm color="Black" parent="base_link">
+    <origin xyz="0.015 0 0.137" rpy="${M_PI} 0 0"/>
+  </uarm>
+
+
+  <!-- Camera -->
+<!--
+  <kinect_camera name="head_camera" parent="base_link">
+    <origin xyz="0 0 0.35" rpy="0 0 0"/>
+  </kinect_camera>
+-->
+  <!-- Lidar -->
+<!--
+  <lidar name="lidar" parent="base_link">
+    <origin xyz="-0.02 0 0.285" rpy="0 0 0"/>
+  </lidar>
+-->
+
+  <!-- extensions -->
+  <xacro:frobo_base_gazebo />
+
+</robot>

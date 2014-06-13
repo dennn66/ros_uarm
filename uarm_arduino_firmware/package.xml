@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>uarm_arduino_firmware</name>
+  <version>1.0.0</version>
+  <description>The uarm_arduino_firmware package</description>
+   <maintainer email="dennn@e1.ru">dennn66</maintainer>
+
+
+  <license>BSD</license>
+
+<url type="UFactory repositories">https://github.com/UFactory</url> 
+ 
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

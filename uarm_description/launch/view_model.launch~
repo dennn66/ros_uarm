@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find frobo_description)/launch/frobo_description.launch">
+  </include>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find frobo_description)/rviz/model.rviz"/>
+</launch>

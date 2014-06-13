@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find uarm_description)/launch/uarm_description_wo_jsc.launch">
+  </include>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uarm_description)/rviz/model.rviz"/>
+</launch>

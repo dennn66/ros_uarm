@@ -1,0 +1,5 @@
+<launch>
+   <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find uarm_description)/urdf/uarm.urdf.xacro'" />
+   <param name="robot_description" command="$(arg urdf_file)" />
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+</launch>
